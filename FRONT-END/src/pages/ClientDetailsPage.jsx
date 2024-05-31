@@ -1,20 +1,19 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import { Box, Typography, Paper, Divider } from '@mui/material';
+import { clientsMore } from '../components/ClientsMore';
 import Header from '../components/Header';
-import { processes } from '../components/Process';
 
-const ProcessDetailsPage = () => {
+const ClientDetailsPage = () => {
     const { id } = useParams();
-    const process = processes.find(process => process.id === parseInt(id));
-
-    if (!process) {
+    const client = clientsMore.find(client => client.id === parseInt(id));
+    if (!client) {
         return (
             <>
                 <Header />
                 <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '80vh' }}>
                     <Typography variant="h6">
-                        Processo não encontrado.
+                        Cliente não encontrado.
                     </Typography>
                 </Box>
             </>
@@ -31,13 +30,14 @@ const ProcessDetailsPage = () => {
                     </Typography>
                     <Divider sx={{ my: 2 }} />
                     <Typography variant="h5" gutterBottom>
-                        Nome do Processo: {process.name}
+                        Cliente: {client.name}
                     </Typography>
                     <Typography variant="body1" gutterBottom>
-                        Tipo do Processo: {process.type}
+                        Documento do Cliente: {client.document}
                     </Typography>
-                    <Typography variant="body1" gutterBottom>
-                        Descrição do Processo: {process.description}
+                    <Divider sx={{ my: 2 }} />
+                    <Typography variant="body1">
+                        Endereço: {client.address}
                     </Typography>
                 </Paper>
             </Box>
@@ -45,4 +45,4 @@ const ProcessDetailsPage = () => {
     );
 };
 
-export default ProcessDetailsPage;
+export default ClientDetailsPage;

@@ -1,9 +1,19 @@
-import React from 'react';
-import { Drawer, List, ListItem, ListItemIcon, ListItemText, Divider } from '@mui/material';
-import HomeIcon from '@mui/icons-material/Home';
-import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import SettingsIcon from '@mui/icons-material/Settings';
-import { Link } from 'react-router-dom';
+import React from "react";
+import {
+  Drawer,
+  List,
+  ListItem,
+  ListItemIcon,
+  ListItemText,
+  Divider,
+  Avatar,
+  Typography,
+} from "@mui/material";
+import HomeIcon from "@mui/icons-material/Home";
+import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+import { Link } from "react-router-dom";
+import AccountBalanceIcon from "@mui/icons-material/AccountBalance";
+import LogoImage from "../img/icon.png";
 
 const drawerWidth = 240;
 
@@ -13,36 +23,43 @@ const Sidebar = () => {
       sx={{
         width: drawerWidth,
         flexShrink: 0,
-        '& .MuiDrawer-paper': {
+        "& .MuiDrawer-paper": {
           width: drawerWidth,
         },
       }}
       variant="permanent"
       anchor="left"
     >
+      <div style={{ display: "flex", alignItems: "center", padding: "20px" }}>
+        <Avatar
+          alt="PGE Logo"
+          src={LogoImage}
+          sx={{ marginRight: "10px" }}
+        />{" "}
+        <Typography variant="h6">PGE</Typography>
+      </div>
+      <Divider />
       <List>
         <ListItem button component={Link} to="/">
           <ListItemIcon>
             <HomeIcon />
           </ListItemIcon>
-          <ListItemText primary="Home" />
+          <ListItemText primary="Início" />
         </ListItem>
-        <ListItem button component={Link} to="/profile">
+        <ListItem button component={Link} to="/clients">
           <ListItemIcon>
             <AccountCircleIcon />
           </ListItemIcon>
-          <ListItemText primary="Profile" />
+          <ListItemText primary="Clientes" />
+        </ListItem>
+        <ListItem button component={Link} to="/process">
+          <ListItemIcon>
+            <AccountBalanceIcon />
+          </ListItemIcon>
+          <ListItemText primary="Processos" />
         </ListItem>
       </List>
       <Divider />
-      <List>
-        <ListItem button component={Link} to="/settings">
-          <ListItemIcon>
-            <SettingsIcon />
-          </ListItemIcon>
-          <ListItemText primary="Settings" />
-        </ListItem>
-      </List>
     </Drawer>
   );
 };
