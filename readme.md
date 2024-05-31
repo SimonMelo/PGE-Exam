@@ -133,27 +133,3 @@ Relacionamento: 1 para N (Advogado para Processo Judicial)
 Um processo judicial pode ter vários documentos anexados, mas um documento está associado a apenas um processo judicial.
 
 Relacionamento: 1 para N (Processo Judicial para Documento)
-
-+---------------------+        +---------------------+
-|      Cliente        |        |      Advogado       |
-+---------------------+        +---------------------+
-| PK  id              |        | PK  id              |
-|     nome            |        |     nome            |
-|     CPF             |        |     CPF             |
-+---------------------+        |     OAB             |
-                               +---------------------+
-                 1                          1
-                 |                          |
-                 |                          |
-                 |                          |
-                N|                          |N
-+---------------------+        +---------------------+
-|  Processo Judicial  |<-------|      Documento      |
-+---------------------+        +---------------------+
-| PK  id              |        | PK  id              |
-|     numero_processo |        |     nome            |
-|     tema            |        |     caminho         |
-|     valor_causa     |        |     extensao        |
-| FK  cliente_id      |        | FK  processo_id     |
-| FK  advogado_resp_id|        +---------------------+
-+---------------------+
