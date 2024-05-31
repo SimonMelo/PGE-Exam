@@ -133,3 +133,9 @@ Relacionamento: 1 para N (Advogado para Processo Judicial)
 Um processo judicial pode ter vários documentos anexados, mas um documento está associado a apenas um processo judicial.
 
 Relacionamento: 1 para N (Processo Judicial para Documento)
+
+# Considerações finais
+
+Eu infelizmente não pude fazer 100% a aplicação tanto no back-end, como no front-end pois estava sem máquina... acabei fazendo a aplicação inteira por um computador emprestado que não estava presente 100% do tempo mas tentei fazer o entregável.
+O por pequenas falhas e desleixos no back-end, acabei não conseguindo aplicar os endpoints para o front-end (mas existe um arquivo services preparado para eles) então deixei dados mockados para a representação dos mesmos. Não consegui fazer validações e alguns tratamentos tanto no front e no back, mas tentei fazer o possível.
+Essa é a aplicação que consegui fazer até hoje mesmo com a pequena indisponibilidade da máquina. 
